@@ -18,6 +18,10 @@ Ultrasonic ultrasonic2(48);
 Ultrasonic ultrasonic3(50);
 Ultrasonic ultrasonic4(52);
 
+int main() {
+    return 0;
+}
+
 void FeldMessen() {
     AB_Feld_x = (AB1 + AB3 + AB_Sensoren);
     AB_Feld_y = (AB2 + AB4 + AB_Sensoren);
@@ -38,7 +42,7 @@ int ABS_Y() {
         return AB2;
     }
 }
-int Target()
+int Target(){
     int k = 60;                                                     //Variabler Tuning faktor
     float fahrtWinkel = (sensor*22.5) + k * sin(sensor*22.5);
     return(fahrtWinkel);

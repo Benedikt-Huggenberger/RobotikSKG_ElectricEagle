@@ -7,7 +7,11 @@
 int Punkte_X[4];
 int Punkte_Y[4];
 
-int Regressionsgerade() {
+void main() {
+    return 0;
+}
+
+void Regressionsgerade() {
 
     int n = 5;
     double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
@@ -23,6 +27,6 @@ int Regressionsgerade() {
     double b = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
     double m = (sumY - b * sumX) / n;
 
-    return {b, m}
+
 
 }
