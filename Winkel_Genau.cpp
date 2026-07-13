@@ -24,24 +24,26 @@ int main() {
 
 double Diff_sensoren(bool größer) {
     if (größer == true) {
-        return (double)werte[sensor + 1] / werte[sensor - 1];
+        return (double)werte[naechster] / werte[vorheriger];
     }
-    else if (größer == false) {
-        return (double)werte[sensor - 1] / werte[sensor - 1];
+    else{
+        return (double)werte[vorheriger] / werte[naechster];
     }
 }
 
 double Winkel_Genau(){                                    //checken welcher sensor von den beiden benachtbarten näher ist
-    int naechster = (sensor + 1) % 15;
-    int vorheriger = (sensor - 1 + 15) % 15;
+    naechster = (sensor + 1) % 16;
+    vorheriger = (sensor - 1 + 15) % 16;
+
     if(werte[naechster] < werte[vorheriger]) {          //gegen uhrzeigersinn größer
         return((sensor * 22.5)+(Diff_sensoren(true)*22.5));
     }
+
     else if(werte[naechster] > werte[vorheriger]) {     //im uhrzeigersinn größer
         return((sensor * 22.5)-(Diff_sensoren(true)*22.5));
     }
+
     else {
         return(sensor*22.5);
     }
 }
-
