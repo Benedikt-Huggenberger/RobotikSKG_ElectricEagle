@@ -33,12 +33,12 @@ void US_lesen() {
     AB4 = ultrasonic4.MeasureINCentimeters();
 }
 int ABS_X() {
-    if (!(AB_Feld_x - (AB1 + AB3+ AB_Sensoren)<50 && AB_Feld_x - (AB1 + AB3+ AB_Sensoren)>50)) {
+    if (!(AB_Feld_x - (AB1 + AB3+ AB_Sensoren)<220 && AB_Feld_x - (AB1 + AB3+ AB_Sensoren)>20)) {
         return AB3;
     }
 }
 int ABS_Y() {
-    if (!(AB_Feld_x - (AB2 + AB4+ AB_Sensoren)<50 && AB_Feld_x - (AB2 + AB4+ AB_Sensoren)>50)) {
+    if (!(AB_Feld_x - (AB2 + AB4+ AB_Sensoren)<20 && AB_Feld_x - (AB2 + AB4+ AB_Sensoren)>20)) {
         return AB2;
     }
 }
