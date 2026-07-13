@@ -6,4 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(untitled1 main.cpp
         US_Sensoren_Berechnung.cpp
-        US_Sensoren_Berechnung.h)
+        US_Sensoren_Berechnung.h
+        cmake-build-debug/Pos_Ball.cpp
+        Winkel_Genau.cpp
+        Programm_Main_13.07.2026_22.27.cpp)
