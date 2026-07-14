@@ -3,13 +3,10 @@
 #include <utility/imumaths.h>
 #include "Ultrasonic.h"*/
 #include "math.h"
+#include "iostream"
 
-int Punkte_X[4];
-int Punkte_Y[4];
-
-void main() {
-    return 0;
-}
+float Punkte_X[] = {1.0, 2.0, 3.0, 4.0, 5.0};
+float Punkte_Y[] = {1.1, 1.9, 3.2, 3.8, 5.1};
 
 void Regressionsgerade() {
 
@@ -23,10 +20,14 @@ void Regressionsgerade() {
         sumX2 += Punkte_X[i] * Punkte_X[i];
     }
 
-    // Steigung b und y-Achsenabschnitt a: y = a + b*x
-    double b = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
-    double m = (sumY - b * sumX) / n;
+    double m = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+    double b = (sumY - m * sumX) / n;
 
+    std::cout << "Geradengleichung: y = " << m << " * x + " << b << std::endl;
 
+}
 
+int main() {
+    Regressionsgerade();
+    return 0;
 }
