@@ -12,6 +12,8 @@ int AB4 = 0;
 int AB_Sensoren = 100;      //mm
 int AB_Feld_x = 0;
 int AB_Feld_y = 0;
+int prev_x = 0;
+int prev_y = 0;
 //ultrasonic.MeasureInCentimeters();
 Ultrasonic ultrasonic1(46);
 Ultrasonic ultrasonic2(48);
@@ -35,11 +37,19 @@ void US_lesen() {
 int ABS_X() {
     if (!(AB_Feld_x - (AB1 + AB3+ AB_Sensoren)<220 && AB_Feld_x - (AB1 + AB3+ AB_Sensoren)>20)) {
         return AB3+AB_Sensoren/2;
+        prev_x = AB3+AB_Sensoren/2;
+    }
+    else {
+        return prev_x;
     }
 }
 int ABS_Y() {
     if (!(AB_Feld_x - (AB2 + AB4+ AB_Sensoren)<20 && AB_Feld_x - (AB2 + AB4+ AB_Sensoren)>20)) {
         return AB2+AB_Sensoren/2;
+        prev_y = AB4+AB_Sensoren/2;
+    }
+    else {
+        return prev_y;
     }
 }
 int Target(){
