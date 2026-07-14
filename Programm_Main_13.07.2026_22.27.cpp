@@ -12,8 +12,8 @@ int AB2 = 0;
 int AB3 = 0;
 int AB4 = 0;
 int AB_Sensoren = 100;      //mm
-int AB_Feld_x = 0;
-int AB_Feld_y = 0;
+int Roboter_x = 0;
+int Roboter_y = 0;
 //ultrasonic.MeasureInCentimeters();
 Ultrasonic ultrasonic1(46);
 Ultrasonic ultrasonic2(48);
@@ -26,7 +26,7 @@ int vorheriger = 0;
 int prev_x = 0;
 int prev_y = 0;
 
-void main() {
+int main() {
     return 0;
 }
 
@@ -51,8 +51,8 @@ void Regressionsgerade() {
 }
 
 void FeldMessen() {
-    AB_Feld_x = (AB1 + AB3 + AB_Sensoren);
-    AB_Feld_y = (AB2 + AB4 + AB_Sensoren);
+    Roboter_x = (AB1 + AB3 + AB_Sensoren);
+    Roboter_y = (AB2 + AB4 + AB_Sensoren);
 }
 void US_lesen() {
     AB1 = ultrasonic1.MeasureINCentimeters();
@@ -61,7 +61,7 @@ void US_lesen() {
     AB4 = ultrasonic4.MeasureINCentimeters();
 }
 int ABS_X() {
-    if (!(AB_Feld_x - (AB1 + AB3+ AB_Sensoren)<220 && AB_Feld_x - (AB1 + AB3+ AB_Sensoren)>20)) {
+    if (!(Roboter_x - (AB1 + AB3+ AB_Sensoren)<220 && Roboter_x - (AB1 + AB3+ AB_Sensoren)>20)) {
         return AB3+AB_Sensoren/2;
         prev_x = AB3+AB_Sensoren/2;
     }
@@ -70,7 +70,7 @@ int ABS_X() {
     }
 }
 int ABS_Y() {
-    if (!(AB_Feld_x - (AB2 + AB4+ AB_Sensoren)<20 && AB_Feld_x - (AB2 + AB4+ AB_Sensoren)>20)) {
+    if (!(Roboter_y - (AB2 + AB4+ AB_Sensoren)<20 && Roboter_y - (AB2 + AB4+ AB_Sensoren)>20)) {
         return AB2+AB_Sensoren/2;
         prev_y = AB4+AB_Sensoren/2;
     }

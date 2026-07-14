@@ -10,8 +10,8 @@ int AB2 = 0;
 int AB3 = 0;
 int AB4 = 0;
 int AB_Sensoren = 100;      //mm
-int AB_Feld_x = 0;
-int AB_Feld_y = 0;
+float Roboter_x = 0;
+float Roboter_Y = 0;
 int niedrigwert;
 int werte[15];
 int naechster = 0;
