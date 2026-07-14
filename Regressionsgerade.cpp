@@ -5,8 +5,8 @@
 #include "math.h"
 #include "iostream"
 
-float Punkte_X[] = {1.0, 2.0, 3.0, 4.0, 5.0};
-float Punkte_Y[] = {1.1, 1.9, 3.2, 3.8, 5.1};
+float Punkte_X[4];
+float Punkte_Y[4];
 
 void Regressionsgerade() {
 
